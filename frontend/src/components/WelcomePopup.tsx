@@ -1,7 +1,7 @@
 import { useFlags } from 'launchdarkly-react-client-sdk'
 
 export default function WelcomePopup() {
-  const { showWelcomePopup } = useFlags()  // LD camelCases the key
+  const { showWelcomePopup } = useFlags()
 
   if (!showWelcomePopup) return null
 
