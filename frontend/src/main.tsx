@@ -12,7 +12,7 @@ function getUserId(): string {
 
 ;(async () => {
   const LDProvider = await asyncWithLDProvider({
-    clientSideID: '69aba909395e3b09f11f6cad',
+    clientSideID: '69aba909395e3b09f11f6cac',
     context: {
       kind: 'user',
       key: getUserId(),

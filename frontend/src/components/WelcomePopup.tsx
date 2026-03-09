@@ -1,5 +1,8 @@
 import { useFlags } from 'launchdarkly-react-client-sdk'
 
+
+/* THIS IS DEPRECIATED, WAS USED ONLY FOR TESTING FLAGS */
+
 export default function WelcomePopup() {
   const { showWelcomePopup } = useFlags()
 
