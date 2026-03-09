@@ -11,7 +11,7 @@ ldclient.set_config(Config(os.getenv("LAUNCHDARKLY_SDK_KEY", "")))
 ld = ldclient.get()
 
 # Simulate 20 users clicking helpful
-for i in range(300):
+for i in range(150):
     user_id = str(uuid.uuid4())
     ctx = Context.builder(user_id).kind('user').anonymous(True).build()
 
@@ -19,7 +19,8 @@ for i in range(300):
     variant = ld.variation('ai-summary-variant', ctx, 'short')
 
     # Simulate a helpful click
-    ld.track('helpful-click', ctx, 1)
+    if variant == 'detailed':
+        ld.track('helpful-click', ctx, 1)
 
     print(f"User {i+1}: variant={variant}")
 

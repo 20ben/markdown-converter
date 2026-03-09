@@ -37,6 +37,7 @@ body {
   font-family: 'Poppins', sans-serif;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .header {
@@ -48,6 +49,10 @@ body {
 
   padding-left: 40px;
   gap: 16px;
+
+  /* Break out of the #root max-width constraint to fill the full viewport */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .header h1 {
@@ -64,6 +69,7 @@ body {
 
 .converter {
   padding-top: 60px;
+  padding-bottom: 60px;
 
   display: flex;
   flex-direction: column;
@@ -111,12 +117,12 @@ body {
 .textboxes {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: clamp(16px, 3vw, 40px);
 }
 
 .textbox {
-  width: 420px;
-  height: 520px;
+  width: clamp(240px, 38vw, 420px);
+  height: clamp(320px, 52vh, 520px);
 
   background: #D9D9D9;
 
